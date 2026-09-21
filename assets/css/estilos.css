@@ -1,0 +1,147 @@
+/* ========================================== */
+/* PERSONALIZACIÓN PIXEL CROSS (BOOTSTRAP 5)  */
+/* ========================================== */
+
+:root {
+    --pixel-purple: #392c60;
+    --pixel-magenta: #b24fcd;
+    --pixel-magenta-hover: #953cb1;
+}
+
+.bg-pixel-dark {
+    background-color: var(--pixel-purple) !important;
+}
+
+nav.navbar {
+    border-bottom: 4px solid var(--pixel-magenta);
+}
+
+/* --- BOTONES --- */
+
+/* Botón Principal (Relleno) */
+.btn-pixel {
+    background-color: var(--pixel-magenta);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-pixel:hover {
+    background-color: var(--pixel-magenta-hover);
+    color: #ffffff;
+}
+
+/* Botón Delineado (Para "Ver todo", "Ver más", etc.) */
+.btn-outline-pixel {
+    color: var(--pixel-magenta);
+    border: 2px solid var(--pixel-magenta);
+    font-weight: bold;
+    text-decoration: none;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-pixel:hover {
+    background-color: var(--pixel-magenta);
+    color: #ffffff;
+    border-color: var(--pixel-magenta);
+    transform: translateY(-2px);
+}
+
+/* Botones de Categorías Grandes */
+.btn-categoria {
+    display: block;
+    width: 100%;
+    padding: 1rem !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    background-color: var(--pixel-purple) !important;
+    color: #ffffff !important;
+    border: 2px solid var(--pixel-magenta) !important;
+    transition: all 0.3s ease;
+}
+
+.btn-categoria:hover {
+    background-color: var(--pixel-magenta) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+.btn-categoria.active {
+    background-color: var(--pixel-magenta) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 12px var(--pixel-magenta);
+}
+
+/* --- COMPONENTES --- */
+
+.text-pixel-magenta {
+    color: var(--pixel-magenta) !important;
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+/* Carrusel */
+.carousel-item img {
+    height: 350px; 
+    object-fit: contain; 
+    object-position: center;
+}
+
+.carousel-item {
+    background-image: url('../img/fondo-header.jpg');
+}
+
+/* Fondo para los textos del carrusel */
+.carousel-caption-pixel {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/* --- MODAL CARRITO DE COMPRAS --- */
+
+/* Fondo blanco general para el contenedor del modal */
+#modalCarrito .modal-content {
+    background-color: #ffffff;
+    color: #212529;
+    border: 2px solid var(--pixel-magenta);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Líneas separadoras claras */
+#modalCarrito .modal-header,
+#modalCarrito .modal-footer {
+    border-color: #dee2e6;
+}
+
+/* Ítems del carrito con fondo claro */
+#lista-carrito .list-group-item {
+    background-color: #f8f9fa;
+    color: #212529;
+    border: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+/* Botón de eliminación por producto */
+.btn-eliminar-item {
+    background: transparent;
+    border: none;
+    color: #dc3545;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.btn-eliminar-item:hover {
+    color: #a71d2a;
+}

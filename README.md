@@ -1,14 +1,70 @@
-# Pixel Cross - Tienda de Videojuegos
+# Pixel Cross - Tienda de Videojuegos y Coleccionables
 
-Proyecto de optimización y diseño responsivo con HTML y CSS.
+Proyecto web responsivo desarrollado con **HTML5, CSS3, Bootstrap 5 y JavaScript (ES6+)**[cite: 4]. Implementa carga dinámica de productos mediante **Fetch API**, manipulación directa del **DOM** para la gestión de un carrito de compras interactivo con **LocalStorage**, y validación con feedback visual en el formulario de contacto[cite: 4].
 
-## Evidencias de Adaptabilidad
+---
 
-### Vista Móvil
-![Vista en Dispositivo Móvil](img/capturas/Captura-movil.png)
+## Funcionalidades Principales
 
-### Vista Tablet
-![Vista en Tablet](img/capturas/Captura-tablet.png)
+* **Carga Asíncrona (Fetch API):** Obtención dinámica del catálogo desde un archivo `JSON` externo[cite: 4].
+* **Diseño Responsivo:** Adaptación completa a dispositivos móviles, tablets y computadoras utilizando la grilla de **Bootstrap 5**[cite: 4].
+* **Carrito de Compras Interactivo:**
+  * Contador dinámico de ítems en el Navbar[cite: 4].
+  * Cálculo automático del total a pagar[cite: 4].
+  * Modificación de cantidades, eliminación individual y vaciado del carrito[cite: 4].
+  * Persistencia de datos mediante `localStorage`.
+* **Filtrado y Buscador Dinámico:** Filtrado inmediato por categorías (Videojuegos, TCG, Accesorios) y búsqueda por texto en tiempo real[cite: 4].
+* **Formulario de Contacto:** Gestión de eventos `submit` con mensajes interactivos de alerta[cite: 4].
 
-### Vista Escritorio
-![Vista en Escritorio](img/capturas/Captura-Desktop.png)
+---
+
+## Tecnologías Utilizadas
+
+* **HTML5:** Estructuración semántica de las distintas páginas[cite: 4].
+* **CSS3 / Bootstrap 5:** Maquetación responsiva, componentes visuales y utilidades[cite: 4].
+* **JavaScript (ES6+):** Programación modular, manipulación del DOM y manejo de eventos[cite: 4].
+* **Fetch API:** Consumo de datos externos[cite: 4].
+* **LocalStorage:** Almacenamiento persistente del estado del carrito en el navegador.
+
+---
+
+## Evidencias de Funcionamiento y Adaptabilidad
+
+### Vista Escritorio (Desktop)
+
+#### 1. Página de Inicio y Catálogo General
+![Inicio Desktop](img/capturas/Desktop-inicio.png)
+![Catálogo Productos](img/capturas/Desktop-productos.png)
+
+#### 2. Filtro por Categorías y Buscador
+![Filtro por Categorías](img/capturas/Desktop-filtro-categorias.png)
+![Búsqueda Dinámica](img/capturas/Desktop-busqueda.png)
+
+#### 3. Carrito de Compras (Vacío y Lleno)
+![Carrito Vacío](img/capturas/Desktop-carrito-vacio.png)
+![Carrito Lleno](img/capturas/Desktop-carrito-lleno.png)
+
+#### 4. Formulario de Contacto y Feedback
+![Envío Exitoso Formulario](img/capturas/Desktop-formulario-exitoso.png)
+
+---
+
+### Vista Móvil (Mobile)
+
+#### 1. Navegación e Inicio
+![Inicio Móvil](img/capturas/Movil-inicio.png)
+
+#### 2. Filtro de Categorías y Buscador
+![Filtro Móvil](img/capturas/Movil-filtro-categorias.png)
+![Búsqueda Móvil](img/capturas/Movil-busqueda.png)
+
+#### 3. Carrito de Compras y Contacto
+![Carrito Móvil](img/capturas/Movil-carrito.png)
+![Contacto Móvil](img/capturas/Movil-contacto.png)
+
+---
+
+## Despliegue
+
+El proyecto se encuentra alojado y disponible en **GitHub Pages**:
+`https://tu-usuario.github.io/tu-repositorio/`
