@@ -1,29 +1,29 @@
 # Pixel Cross - Tienda de Videojuegos y Coleccionables
 
-Proyecto web responsivo desarrollado con **HTML5, CSS3, Bootstrap 5 y JavaScript (ES6+)**[cite: 4]. Implementa carga dinámica de productos mediante **Fetch API**, manipulación directa del **DOM** para la gestión de un carrito de compras interactivo con **LocalStorage**, y validación con feedback visual en el formulario de contacto[cite: 4].
+Proyecto web responsivo desarrollado con **HTML5, CSS3, Bootstrap 5 y JavaScript (ES6+)**. Implementa carga dinámica de productos mediante **Fetch API**, manipulación directa del **DOM** para la gestión de un carrito de compras interactivo con **LocalStorage**, y validación con feedback visual en el formulario de contacto.
 
 ---
 
 ## Funcionalidades Principales
 
-* **Carga Asíncrona (Fetch API):** Obtención dinámica del catálogo desde un archivo `JSON` externo[cite: 4].
-* **Diseño Responsivo:** Adaptación completa a dispositivos móviles, tablets y computadoras utilizando la grilla de **Bootstrap 5**[cite: 4].
+* **Carga Asíncrona (Fetch API):** Obtención dinámica del catálogo desde un archivo `JSON` externo.
+* **Diseño Responsivo:** Adaptación completa a dispositivos móviles, tablets y computadoras utilizando la grilla de **Bootstrap 5**.
 * **Carrito de Compras Interactivo:**
-  * Contador dinámico de ítems en el Navbar[cite: 4].
-  * Cálculo automático del total a pagar[cite: 4].
-  * Modificación de cantidades, eliminación individual y vaciado del carrito[cite: 4].
+  * Contador dinámico de ítems en el Navbar.
+  * Cálculo automático del total a pagar.
+  * Modificación de cantidades, eliminación individual y vaciado del carrito.
   * Persistencia de datos mediante `localStorage`.
-* **Filtrado y Buscador Dinámico:** Filtrado inmediato por categorías (Videojuegos, TCG, Accesorios) y búsqueda por texto en tiempo real[cite: 4].
-* **Formulario de Contacto:** Gestión de eventos `submit` con mensajes interactivos de alerta[cite: 4].
+* **Filtrado y Buscador Dinámico:** Filtrado inmediato por categorías (Videojuegos, TCG, Accesorios) y búsqueda por texto en tiempo real.
+* **Formulario de Contacto:** Gestión de eventos `submit` con mensajes interactivos de alerta.
 
 ---
 
 ## Tecnologías Utilizadas
 
-* **HTML5:** Estructuración semántica de las distintas páginas[cite: 4].
-* **CSS3 / Bootstrap 5:** Maquetación responsiva, componentes visuales y utilidades[cite: 4].
-* **JavaScript (ES6+):** Programación modular, manipulación del DOM y manejo de eventos[cite: 4].
-* **Fetch API:** Consumo de datos externos[cite: 4].
+* **HTML5:** Estructuración semántica de las distintas páginas.
+* **CSS3 / Bootstrap 5:** Maquetación responsiva, componentes visuales y utilidades.
+* **JavaScript (ES6+):** Programación modular, manipulación del DOM y manejo de eventos.
+* **Fetch API:** Consumo de datos externos.
 * **LocalStorage:** Almacenamiento persistente del estado del carrito en el navegador.
 
 ---
@@ -67,4 +67,4 @@ Proyecto web responsivo desarrollado con **HTML5, CSS3, Bootstrap 5 y JavaScript
 ## Despliegue
 
 El proyecto se encuentra alojado y disponible en **GitHub Pages**:
-`https://tu-usuario.github.io/tu-repositorio/`
+`https://KatherineIbanezL.github.io/DESARROLLO-FRONTEND-I/`
