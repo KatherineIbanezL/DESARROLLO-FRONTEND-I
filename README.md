@@ -33,34 +33,34 @@ Proyecto web responsivo desarrollado con **HTML5, CSS3, Bootstrap 5 y JavaScript
 ### Vista Escritorio (Desktop)
 
 #### 1. Página de Inicio y Catálogo General
-![Inicio Desktop](img/capturas/Desktop-inicio.png)
-![Catálogo Productos](img/capturas/Desktop-productos.png)
+![Inicio Desktop](assets/img/capturas/Desktop-inicio.png)
+![Catálogo Productos](assets/img/capturas/Desktop-productos.png)
 
 #### 2. Filtro por Categorías y Buscador
-![Filtro por Categorías](img/capturas/Desktop-filtro-categorias.png)
-![Búsqueda Dinámica](img/capturas/Desktop-busqueda.png)
+![Filtro por Categorías](assets/img/capturas/Desktop-filtro-categorias.png)
+![Búsqueda Dinámica](assets/img/capturas/Desktop-busqueda.png)
 
 #### 3. Carrito de Compras (Vacío y Lleno)
-![Carrito Vacío](img/capturas/Desktop-carrito-vacio.png)
-![Carrito Lleno](img/capturas/Desktop-carrito-lleno.png)
+![Carrito Vacío](assets/img/capturas/Desktop-carrito-vacio.png)
+![Carrito Lleno](assets/img/capturas/Desktop-carrito-lleno.png)
 
 #### 4. Formulario de Contacto y Feedback
-![Envío Exitoso Formulario](img/capturas/Desktop-formulario-exitoso.png)
+![Envío Exitoso Formulario](assets/img/capturas/Desktop-formulario-exitoso.png)
 
 ---
 
 ### Vista Móvil (Mobile)
 
 #### 1. Navegación e Inicio
-![Inicio Móvil](img/capturas/Movil-inicio.png)
+![Inicio Móvil](assets/img/capturas/Movil-inicio.png)
 
 #### 2. Filtro de Categorías y Buscador
-![Filtro Móvil](img/capturas/Movil-filtro-categorias.png)
-![Búsqueda Móvil](img/capturas/Movil-busqueda.png)
+![Filtro Móvil](assets/img/capturas/Movil-filtro-categorias.png)
+![Búsqueda Móvil](assets/img/capturas/Movil-busqueda.png)
 
 #### 3. Carrito de Compras y Contacto
-![Carrito Móvil](img/capturas/Movil-carrito.png)
-![Contacto Móvil](img/capturas/Movil-contacto.png)
+![Carrito Móvil](assets/img/capturas/Movil-carrito.png)
+![Contacto Móvil](assets/img/capturas/Movil-contacto.png)
 
 ---
 
