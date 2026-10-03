@@ -1,66 +1,64 @@
 # Pixel Cross - Tienda de Videojuegos y Coleccionables
 
-Proyecto web responsivo desarrollado con **HTML5, CSS3, Bootstrap 5 y JavaScript (ES6+)**. Implementa carga dinámica de productos mediante **Fetch API**, manipulación directa del **DOM** para la gestión de un carrito de compras interactivo con **LocalStorage**, y validación con feedback visual en el formulario de contacto.
+Proyecto web responsivo desarrollado con **React**, **Vite**, **Bootstrap 5** y **CSS3**. Implementa una arquitectura modular basada en componentes, gestión de estado con Hooks (`useState`, `useEffect`), un sistema de ofertas y descuentos, carrito de compras y filtrado en tiempo real dentro del catálogo.
 
 ---
 
 ## Funcionalidades Principales
 
-* **Carga Asíncrona (Fetch API):** Obtención dinámica del catálogo desde un archivo `JSON` externo.
-* **Diseño Responsivo:** Adaptación completa a dispositivos móviles, tablets y computadoras utilizando la grilla de **Bootstrap 5**.
-* **Carrito de Compras Interactivo:**
-  * Contador dinámico de ítems en el Navbar.
-  * Cálculo automático del total a pagar.
-  * Modificación de cantidades, eliminación individual y vaciado del carrito.
-  * Persistencia de datos mediante `localStorage`.
-* **Filtrado y Buscador Dinámico:** Filtrado inmediato por categorías (Videojuegos, TCG, Accesorios) y búsqueda por texto en tiempo real.
-* **Formulario de Contacto:** Gestión de eventos `submit` con mensajes interactivos de alerta.
+- **Arquitectura Modular en React:** Estructuración mediante componentes reutilizables (`Navbar`, `Home`, `ProductList`, `ProductCard`, `ShoppingCart`, `Contacto`, `Footer`).
+- **Sistema de Ofertas y Descuentos:** 
+  - Cálculo automático del porcentaje de descuento (`-X% OFF`).
+  - Muestra del precio original junto al precio promocional en productos destacados.
+  - Aplicación automática de la oferta dentro de los cálculos del carrito.
+- **Carrito de Compras Interactivo:**
+  - Contador de artículos en tiempo real sobre el botón del Navbar.
+  - Modal interactivo con desglose en tabla (título del producto, precio unitario/oferta, cantidad y subtotal).
+  - Control de cantidades, eliminación individual e integración de botones de acción.
+  - Persistencia de datos mediante `localStorage` mediante hooks de efecto.
+- **Buscador y Filtro por Categorías:**
+  - Filtrado interactivo en tiempo real por categorías (Videojuegos, TCG, Accesorios).
+  - Barra de búsqueda por texto directo para productos y categorías.
+- **Diseño Responsivo y Tema Personalizado:**
+  - Adaptación completa a móviles, tablets y computadoras mediante la grilla de **Bootstrap 5**.
+  - Identidad visual propia utilizando variables CSS personalizadas.
+- **Navegación Dinámica (SPA):** Transición entre secciones (Inicio, Catálogo, Contacto y scroll a Categorías) sin recargar la página.
 
 ---
 
 ## Tecnologías Utilizadas
 
-* **HTML5:** Estructuración semántica de las distintas páginas.
-* **CSS3 / Bootstrap 5:** Maquetación responsiva, componentes visuales y utilidades.
-* **JavaScript (ES6+):** Programación modular, manipulación del DOM y manejo de eventos.
-* **Fetch API:** Consumo de datos externos.
-* **LocalStorage:** Almacenamiento persistente del estado del carrito en el navegador.
+- **React:** Biblioteca de JavaScript para la construcción de interfaces de usuario basadas en componentes.
+- **Vite:** Entorno de desarrollo rápido y empaquetador de módulos.
+- **JavaScript (ES6+):** Programación funcional, manipulación de arreglos y hooks.
+- **Bootstrap 5 (CDN) & CSS3:** Sistema de maquetación responsiva, componentes UI y variables globales.
+- **JSON:** Fuente de datos local para la carga de productos y gestión del catálogo.
+- **LocalStorage API:** Persistencia del carrito de compras en el navegador del usuario.
 
 ---
 
-## Evidencias de Funcionamiento y Adaptabilidad
+## Estructura del Proyecto
 
-### Vista Escritorio (Desktop)
-
-#### 1. Página de Inicio y Catálogo General
-![Inicio Desktop](assets/img/capturas/Desktop-inicio.png)
-![Catálogo Productos](assets/img/capturas/Desktop-productos.png)
-
-#### 2. Filtro por Categorías y Buscador
-![Filtro por Categorías](assets/img/capturas/Desktop-filtro-categorias.png)
-![Búsqueda Dinámica](assets/img/capturas/Desktop-busqueda.png)
-
-#### 3. Carrito de Compras (Vacío y Lleno)
-![Carrito Vacío](assets/img/capturas/Desktop-carrito-vacio.png)
-![Carrito Lleno](assets/img/capturas/Desktop-carrito-lleno.png)
-
-#### 4. Formulario de Contacto y Feedback
-![Envío Exitoso Formulario](assets/img/capturas/Desktop-formulario-exitoso.png)
-
----
-
-### Vista Móvil (Mobile)
-
-#### 1. Navegación e Inicio
-![Inicio Móvil](assets/img/capturas/Movil-inicio.png)
-
-#### 2. Filtro de Categorías y Buscador
-![Filtro Móvil](assets/img/capturas/Movil-filtro-categorias.png)
-![Búsqueda Móvil](assets/img/capturas/Movil-busqueda.png)
-
-#### 3. Carrito de Compras y Contacto
-![Carrito Móvil](assets/img/capturas/Movil-carrito.png)
-![Contacto Móvil](assets/img/capturas/Movil-contacto.png)
+```text
+public/
+└── img/                      # Imágenes de banners, carrusel y productos
+src/
+├── assets/
+│   └── css/
+│       └── estilos.css       # Estilos y variables personalizadas
+├── components/
+│   ├── Contacto.jsx          # Formulario y vista de contacto
+│   ├── Footer.jsx            # Pie de página
+│   ├── Home.jsx              # Vista principal con carrusel y destacados
+│   ├── Navbar.jsx            # Barra de navegación con contador de carrito
+│   ├── ProductCard.jsx       # Tarjeta individual con insignias de oferta
+│   ├── ProductList.jsx       # Contenedor y grilla de productos
+│   └── ShoppingCart.jsx      # Modal interactivo del carrito de compras
+├── data/
+│   └── productos.json        # Base de datos del catálogo
+├── App.jsx                   # Componente principal y gestión de estados
+└── main.jsx                  # Punto de entrada de React
+```
 
 ---
 

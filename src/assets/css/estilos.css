@@ -85,6 +85,31 @@ nav.navbar {
     object-fit: cover;
 }
 
+/* Tarjetas de Producto */
+.card-pixel {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.card-pixel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(178, 79, 205, 0.2) !important;
+    border-color: var(--pixel-magenta);
+}
+
+/* Color del distintivo de oferta personalizado */
+.badge.bg-danger {
+  background-color: #e63946 !important;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Foco personalizado en el campo de búsqueda */
+.form-control:focus {
+    border-color: var(--pixel-magenta);
+    box-shadow: 0 0 0 0.25rem rgba(178, 79, 205, 0.25);
+}
+
 /* Carrusel */
 .carousel-item img {
     height: 350px; 
@@ -93,7 +118,9 @@ nav.navbar {
 }
 
 .carousel-item {
-    background-image: url('../img/fondo-header.jpg');
+    background-image: url('/img/fondo-header.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 /* Fondo para los textos del carrusel */
