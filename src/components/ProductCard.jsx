@@ -1,8 +1,11 @@
 import React from 'react';
 
-export function ProductCard({ product, addToCart }) {
+export function ProductCard({ product, cart = [], addToCart }) {
   const tieneOferta = Boolean(product.precioOferta);
   const precioFinal = tieneOferta ? product.precioOferta : product.precio;
+
+  // Verifica si el producto ya está en el carrito
+  const isInCart = cart.some((item) => item.id === product.id);
 
   // Cálculo del porcentaje de descuento
   const porcentajeDescuento = tieneOferta
@@ -63,11 +66,14 @@ export function ProductCard({ product, addToCart }) {
             )}
           </div>
 
+          {/* Botón con renderizado condicional de estado y estilo */}
           <button
-            className="btn btn-pixel w-100 mt-auto py-2"
+            className={`btn w-100 mt-auto py-2 ${
+              isInCart ? 'btn-success' : 'btn-pixel'
+            }`}
             onClick={handleAddToCart}
           >
-            Agregar al Carrito
+            {isInCart ? 'En el carrito' : 'Agregar al Carrito'}
           </button>
         </div>
       </div>

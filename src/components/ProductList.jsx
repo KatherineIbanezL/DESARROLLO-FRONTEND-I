@@ -1,11 +1,11 @@
 import React from 'react';
 import { ProductCard } from './ProductCard';
 
-export function ProductList({ products, addToCart }) {
+export function ProductList({ products, cart, addToCart }) {
   return (
     <div className="row mt-4">
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} addToCart={addToCart} />
+        <ProductCard key={product.id} product={product} cart={cart} addToCart={addToCart} />
       ))}
     </div>
   );

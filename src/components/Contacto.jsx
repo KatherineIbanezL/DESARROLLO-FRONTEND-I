@@ -24,7 +24,7 @@ export function Contacto() {
               <label className="form-label fw-bold">Mensaje</label>
               <textarea className="form-control" rows="4" placeholder="Escribe tu consulta..." required></textarea>
             </div>
-            <button type="submit" className="btn btn-primary w-100 fw-bold">
+            <button type="submit" className="btn btn-pixel w-100 fw-bold">
               Enviar Mensaje
             </button>
           </form>

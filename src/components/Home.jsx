@@ -2,7 +2,7 @@ import React from 'react';
 import { ProductCard } from './ProductCard';
 import productosData from '../data/productos.json';
 
-export function Home({ addToCart, onNavigate }) {
+export function Home({ cart = [], addToCart, onNavigate }) {
   const videojuegosDestacados = productosData.filter(
     (p) => p.categoria === 'Videojuegos' && p.destacado
   );
@@ -78,10 +78,7 @@ export function Home({ addToCart, onNavigate }) {
               <button onClick={() => onNavigate('productos', 'TCG')} className="btn btn-categoria">TCG</button>
             </div>
             <div className="col-6 col-md-3">
-              <button onClick={() => onNavigate('productos', 'Nintendo')} className="btn btn-categoria">Nintendo</button>
-            </div>
-            <div className="col-6 col-md-3">
-              <button onClick={() => onNavigate('productos', 'PlayStation')} className="btn btn-categoria">PlayStation</button>
+              <button onClick={() => onNavigate('productos', 'Videojuegos')} className="btn btn-categoria">Videojuegos</button>
             </div>
             <div className="col-6 col-md-3">
               <button onClick={() => onNavigate('productos', 'Accesorios')} className="btn btn-categoria">Accesorios</button>
@@ -99,7 +96,7 @@ export function Home({ addToCart, onNavigate }) {
           </div>
           <div className="row">
             {videojuegosDestacados.map((product) => (
-              <ProductCard key={product.id} product={product} addToCart={addToCart} />
+              <ProductCard key={product.id} product={product} cart={cart} addToCart={addToCart} />
             ))}
           </div>
         </section>
@@ -114,7 +111,7 @@ export function Home({ addToCart, onNavigate }) {
           </div>
           <div className="row">
             {coleccionablesDestacados.map((product) => (
-              <ProductCard key={product.id} product={product} addToCart={addToCart} />
+              <ProductCard key={product.id} product={product} cart={cart} addToCart={addToCart} />
             ))}
           </div>
         </section>

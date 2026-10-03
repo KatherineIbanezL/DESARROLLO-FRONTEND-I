@@ -28,7 +28,7 @@ export function App() {
     localStorage.setItem('carrito', JSON.stringify(cart));
   }, [cart]);
 
-  // Función para cambiar de página y opcionalmente establecer una categoría
+  // Función para cambiar de página y sección
   const handleNavigate = (page, categoryOrSection = 'todos') => {
     setCurrentPage(page);
     
@@ -41,6 +41,12 @@ export function App() {
       setSelectedCategory(categoryOrSection);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  };
+
+  // Función para cambiar de categoría y resetear la búsqueda
+  const handleCategoryChange = (cat) => {
+    setSelectedCategory(cat);
+    setSearchQuery('');
   };
 
   // Funciones de gestión del carrito
@@ -101,17 +107,19 @@ export function App() {
 
   return (
     <div className="d-flex flex-column min-vh-100">
-      {/* Navbar con control de páginas */}
+      {/* Navbar con control de páginas y búsqueda */}
       <Navbar 
         totalItems={totalItems} 
         onOpenCart={() => setIsCartOpen(true)}
         currentPage={currentPage}
         onNavigate={handleNavigate}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
       />
 
       {/* Renderizado Condicional según la página actual */}
       {currentPage === 'inicio' && (
-        <Home addToCart={addToCart} onNavigate={handleNavigate} />
+        <Home cart={cart} addToCart={addToCart} onNavigate={handleNavigate} />
       )}
 
       {currentPage === 'productos' && (
@@ -130,7 +138,7 @@ export function App() {
                       ? 'btn-pixel'
                       : 'btn-outline-pixel'
                   } text-capitalize m-1`}
-                  onClick={() => setSelectedCategory(cat)}
+                  onClick={() => handleCategoryChange(cat)}
                 >
                   {cat}
                 </button>
@@ -144,7 +152,7 @@ export function App() {
               No se encontraron productos que coincidan con los criterios de búsqueda.
             </p>
           ) : (
-            <ProductList products={filteredProducts} addToCart={addToCart} />
+            <ProductList products={filteredProducts} cart={cart} addToCart={addToCart} />
           )}
         </main>
       )}
