@@ -1,0 +1,89 @@
+[
+  {
+    "id": 1,
+    "titulo": "Zelda: Breath of the Wild",
+    "categoria": "Videojuegos",
+    "precio": 59990,
+    "precioOferta": 48990,
+    "imagen": "/img/zelda-breath-of-the-wild.jpg",
+    "descripcion": "Aventura de mundo abierto aclamada por la crítica para la consola Nintendo Switch.",
+    "destacado": true
+  },
+  {
+    "id": 2,
+    "titulo": "Resident Evil Requiem",
+    "categoria": "Videojuegos",
+    "precio": 64990,
+    "precioOferta": 52990,
+    "imagen": "/img/resident-evil-requiem-ps5-0.webp",
+    "descripcion": "Miedo y supervivencia de última generación optimizados para la consola PlayStation 5.",
+    "destacado": true
+  },
+  {
+    "id": 3,
+    "titulo": "Super Mario Party Jamboree",
+    "categoria": "Videojuegos",
+    "precio": 54990,
+    "precioOferta": 44990,
+    "imagen": "/img/super-mario-party-jamboree-nintendo-switch-2.webp",
+    "descripcion": "El juego multijugador definitivo para disfrutar y competir en familia o con amigos.",
+    "destacado": true
+  },
+  {
+    "id": 4,
+    "titulo": "Control Pro Wireless Switch",
+    "categoria": "Accesorios",
+    "precio": 49990,
+    "imagen": "/img/control-pro-switch.webp",
+    "descripcion": "Mando ergonómico de alta precisión con tecnología de vibración HD y giroscopio.",
+    "destacado": false
+  },
+  {
+    "id": 5,
+    "titulo": "Funda Rígida de Viaje Pro-Protect",
+    "categoria": "Accesorios",
+    "precio": 19990,
+    "imagen": "/img/funda-switch.webp",
+    "descripcion": "Funda de transporte de alta resistencia con compartimentos para cartuchos y cables.",
+    "destacado": false
+  },
+  {
+    "id": 6,
+    "titulo": "Caja TCG Pokémon Booster Box",
+    "categoria": "TCG",
+    "precio": 42990,
+    "imagen": "/img/booster-box.webp",
+    "descripcion": "Caja de sobres de expansión oficial TCG Pokémon con cartas raras e ilustradas.",
+    "destacado": false
+  },
+  {
+    "id": 7,
+    "titulo": "Juego de Cartas Coleccionables Cyberpunk",
+    "categoria": "TCG",
+    "precio": 24990,
+    "precioOferta": 19990,
+    "imagen": "/img/cyberpunk-tcg.jpg",
+    "descripcion": "Edición especial de coleccionista inspirada en el universo Cyberpunk.",
+    "destacado": true
+  },
+  {
+    "id": 8,
+    "titulo": "Starter Deck Kuzan - One Piece Card Game",
+    "categoria": "TCG",
+    "precio": 18990,
+    "precioOferta": 14990,
+    "imagen": "/img/one-piece-tcg.webp",
+    "descripcion": "Mazo de inicio oficial de One Piece Card Game centrado en Kuzan.",
+    "destacado": true
+  },
+  {
+    "id": 9,
+    "titulo": "Mega Evolution — Perfect Order Pokémon",
+    "categoria": "TCG",
+    "precio": 32990,
+    "precioOferta": 25990,
+    "imagen": "/img/pokemon-tcg-.jpg",
+    "descripcion": "Expansión especial Pokémon TCG Mega Evolution Perfect Order.",
+    "destacado": true
+  }
+]
