@@ -33,11 +33,11 @@ export function Navbar({
       setSearchQuery(searchInput);
     }
     // Redirige a productos y resetea la categoría a 'todos' para buscar en todo el catálogo
-    onNavigate('productos', 'todos');
+    onNavigate('productos', 'todo');
   };
 
   // Maneja los clics de navegación limpiando la búsqueda previa
-  const handleNavClick = (page, categoryOrSection = 'todos') => {
+  const handleNavClick = (page, categoryOrSection = 'todo') => {
     if (setSearchQuery) {
       setSearchQuery('');
     }
@@ -57,41 +57,62 @@ export function Navbar({
           Pixel Cross
         </a>
 
-        {/* BARRA DE BÚSQUEDA */}
-        <form 
-          className="d-flex my-2 my-lg-0 me-auto" 
-          onSubmit={handleSearchSubmit}
-          style={{ width: '100%', maxWidth: '420px' }}
-        >
-          <input
-            className="form-control me-2"
-            type="search"
-            placeholder="Buscar juego o consola..."
-            aria-label="Buscar"
-            value={searchInput}
-            onChange={handleInputChange}
-          />
-          <button className="btn btn-pixel px-3" type="submit">
-            Buscar
+        {/* CONTENEDOR Carrito + Toggle */}
+        <div className="d-flex align-items-center order-lg-last">
+          {/* BOTÓN CARRITO */}
+          <button 
+            className="btn btn-nav-icon position-relative p-1 border-0 me-3 me-lg-2" 
+            onClick={onOpenCart}
+            aria-label="Ver carrito"
+          >
+            <img 
+              src={`${import.meta.env.BASE_URL}img/icons8-shopping-cart-48.png`} 
+              alt="Carrito" 
+              className="cart-icon-img"
+            />
+            {totalItems > 0 && (
+              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light">
+                {totalItems}
+              </span>
+            )}
           </button>
-        </form>
 
-        {/* Botón hamburguesa para móviles */}
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+          {/* Botón hamburguesa */}
+          <button
+            className="navbar-toggler navbar-toggler-pixel border-0 p-1"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        </div>
 
-        {/* Enlaces de Navegación y Carrito */}
+        {/* Menú Colapsable */}
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto align-items-center gap-2">
+
+          {/* BARRA DE BÚSQUEDA */}
+          <form 
+            className="d-flex search-form-pixel my-3 my-lg-0 me-lg-auto" 
+            onSubmit={handleSearchSubmit}
+          >
+            <input
+              className="form-control me-2"
+              type="search"
+              placeholder="Buscar juego o consola..."
+              value={searchInput}
+              onChange={handleInputChange}
+            />
+            <button className="btn btn-pixel px-3" type="submit">
+              Buscar
+            </button>
+          </form>
+          
+          {/* Enlaces de Navegación */}
+          <ul className="navbar-nav ms-auto align-items-lg-center gap-2 text-center text-lg-start">
             <li className="nav-item">
               <button
-                className={`nav-link btn btn-link text-decoration-none ${currentPage === 'inicio' ? 'active fw-bold' : ''}`}
+                className={`nav-link nav-link-pixel ${currentPage === 'inicio' ? 'active' : ''}`}
                 onClick={() => handleNavClick('inicio')}
               >
                 Inicio
@@ -99,7 +120,7 @@ export function Navbar({
             </li>
             <li className="nav-item">
               <button
-                className="nav-link btn btn-link text-decoration-none"
+                className="nav-link nav-link-pixel"
                 onClick={() => handleNavClick('inicio', 'categorias')}
               >
                 Categorías
@@ -107,31 +128,18 @@ export function Navbar({
             </li>
             <li className="nav-item">
               <button
-                className={`nav-link btn btn-link text-decoration-none ${currentPage === 'productos' ? 'active fw-bold' : ''}`}
-                onClick={() => handleNavClick('productos', 'todos')}
+                className={`nav-link nav-link-pixel ${currentPage === 'productos' ? 'active' : ''}`}
+                onClick={() => handleNavClick('productos', 'todo')}
               >
                 Productos
               </button>
             </li>
             <li className="nav-item">
               <button
-                className={`nav-link btn btn-link text-decoration-none ${currentPage === 'contacto' ? 'active fw-bold' : ''}`}
+                className={`nav-link nav-link-pixel ${currentPage === 'contacto' ? 'active' : ''}`}
                 onClick={() => handleNavClick('contacto')}
               >
                 Contacto
-              </button>
-            </li>
-            <li className="nav-item ms-lg-2">
-              <button 
-                className="btn btn-outline-pixel position-relative" 
-                onClick={onOpenCart}
-              >
-                🛒 Carrito
-                {totalItems > 0 && (
-                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    {totalItems}
-                  </span>
-                )}
               </button>
             </li>
           </ul>

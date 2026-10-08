@@ -1,96 +1,91 @@
-import React from 'react';
-
-export function ShoppingCart({ cart, removeFromCart, updateQuantity, onClose }) {
-  // Cálculo del total considerando precio de oferta o precio normal
+export function ShoppingCart({ cart = [], removeFromCart, updateQuantity, clearCart, onClose }) {
+  // Cálculo del total acumulado con validación de seguridad
   const total = cart.reduce((sum, item) => {
+    if (!item) return sum;
     const price = item.precioOferta || item.precio || item.price || 0;
     return sum + price * item.quantity;
   }, 0);
 
   return (
-    <div className="modal show d-block" tabIndex="-1" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
+    <div id="modalCarrito" className="modal show d-block" tabIndex="-1">
       <div className="modal-dialog modal-dialog-centered modal-lg">
         <div className="modal-content">
+          
           <div className="modal-header bg-pixel-dark text-white">
-            <h5 className="modal-title">Carrito de Compras</h5>
-            <button type="button" className="btn-close btn-close-white" onClick={onClose}></button>
+            <h5 className="modal-title fw-bold text-pixel-magenta">Carrito de Compras</h5>
+            <button type="button" className="btn-close btn-close-white" onClick={onClose} aria-label="Cerrar"></button>
           </div>
 
-          <div className="modal-body">
-            {cart.length === 0 ? (
-              <p className="text-center my-3">El carrito está vacío.</p>
+          <div className="modal-body p-4">
+            {!cart || cart.length === 0 ? (
+              <p className="text-center my-4 fs-5">El carrito está vacío.</p>
             ) : (
-              <div className="table-responsive">
-                <table className="table align-middle">
-                  <thead>
-                    <tr>
-                      <th>Producto</th>
-                      <th>Precio</th>
-                      <th>Cantidad</th>
-                      <th>Subtotal</th>
-                      <th>Acción</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {cart.map((item) => {
-                      // Obtiene el precio con oferta si existe, si no el normal
-                      const price = item.precioOferta || item.precio || item.price || 0;
+              /* id="lista-carrito" activa el estilo de fondo claro y bordes suaves */
+              <ul id="lista-carrito" className="list-group list-group-flush">
+                {cart.map((item, index) => {
+                  if (!item) return null; 
+                  
+                  const itemId = item.id || item._id || item.codigo || index;
+                  const price = item.precioOferta || item.precio || item.price || 0;
+                  const name = item.titulo || item.nombre || item.name || 'Producto Desconocido';
 
-                      return (
-                        <tr key={item.id}>
-                          {/* item.titulo para leer el nombre del JSON */}
-                          <td className="fw-bold">
-                            {item.titulo || item.nombre || item.name}
-                          </td>
-                          <td>${price.toLocaleString('es-CL')}</td>
-                          <td>
-                            <div className="btn-group btn-group-sm">
-                              <button
-                                className="btn btn-outline-secondary"
-                                onClick={() => updateQuantity(item.id, -1)}
-                              >
-                                -
-                              </button>
-                              <span className="btn btn-light disabled">{item.quantity}</span>
-                              <button
-                                className="btn btn-outline-secondary"
-                                onClick={() => updateQuantity(item.id, 1)}
-                              >
-                                +
-                              </button>
-                            </div>
-                          </td>
-                          <td className="fw-bold">
+                  return (
+                    <li key={itemId} className="list-group-item p-3 shadow-sm border-0 mb-3">
+                      <div className="d-flex flex-column flex-md-row justify-content-between align-items-center w-100 gap-3">
+                        
+                        {/* Nombre del Producto */}
+                        <span className="fw-bold fs-5 text-center text-md-start" style={{ flex: '1' }}>
+                          {name}
+                        </span>
+                        
+                        {/* Controles de Cantidad */}
+                        <div className="btn-group btn-group-sm">
+                          <button type="button" className="btn btn-outline-secondary px-3" onClick={() => updateQuantity(itemId, -1)}>-</button>
+                          <span className="btn btn-light disabled text-dark px-3 fw-bold">{item.quantity}</span>
+                          <button type="button" className="btn btn-outline-secondary px-3" onClick={() => updateQuantity(itemId, 1)}>+</button>
+                        </div>
+
+                        {/* Subtotal y Botón de Eliminar */}
+                        <div className="d-flex align-items-center gap-3">
+                          <span className="fw-bold text-pixel-magenta fs-5">
                             ${(price * item.quantity).toLocaleString('es-CL')}
-                          </td>
-                          <td>
-                            <button
-                              className="btn btn-danger btn-sm"
-                              onClick={() => removeFromCart(item.id)}
-                            >
-                              Eliminar
-                            </button>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </div>
+                          </span>
+      
+                          <button 
+                            type="button"
+                            className="btn btn-eliminar-item px-3 py-1 fw-bold" 
+                            onClick={() => removeFromCart(itemId)}
+                            title="Eliminar producto"
+                          >
+                            Eliminar
+                          </button>
+                        </div>
+
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
             )}
           </div>
 
-          <div className="modal-footer d-flex justify-content-between">
+          <div className="modal-footer d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
             <h4 className="m-0 fw-bold">Total: ${total.toLocaleString('es-CL')}</h4>
-            <div>
-              <button className="btn btn-secondary me-2" onClick={onClose}>
-                Cerrar
+            <div className="d-flex gap-2 w-100 w-md-auto justify-content-end">
+              {cart.length > 0 && clearCart && (
+                <button type="button" className="btn btn-outline-danger fw-bold" onClick={clearCart}>
+                  Vaciar
+                </button>
+              )}
+              <button type="button" className="btn btn-outline-pixel" onClick={onClose}>
+                Seguir Comprando
               </button>
               {cart.length > 0 && (
-                <button className="btn btn-pixel">Finalizar Compra</button>
+                <button type="button" className="btn btn-pixel">Finalizar compra</button>
               )}
             </div>
           </div>
+
         </div>
       </div>
     </div>

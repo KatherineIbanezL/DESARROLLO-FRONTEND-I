@@ -1,6 +1,6 @@
-/* ========================================== */
-/* PERSONALIZACIÓN PIXEL CROSS (BOOTSTRAP 5)  */
-/* ========================================== */
+/* ==========================================================================
+   1. VARIABLES Y ESTILOS GENERALES
+   ========================================================================== */
 
 :root {
     --pixel-purple: #392c60;
@@ -12,27 +12,106 @@
     background-color: var(--pixel-purple) !important;
 }
 
+.text-pixel-magenta {
+    color: var(--pixel-magenta) !important;
+}
+
+.text-pixel-purple {
+    color: var(--pixel-purple) !important;
+}
+
+
+/* ==========================================================================
+   2. BARRA DE NAVEGACIÓN (NAVBAR)
+   ========================================================================== */
+
 nav.navbar {
     border-bottom: 4px solid var(--pixel-magenta);
 }
 
-/* --- BOTONES --- */
+/* Enlaces de la barra de navegación */
+.nav-link-pixel {
+    background-color: transparent !important;
+    border: none !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    width: 100%;
+    box-shadow: none !important;
+    outline: none !important;
+    transition: color 0.3s ease;
+}
 
-/* Botón Principal (Relleno) */
-.btn-pixel {
-    background-color: var(--pixel-magenta);
-    color: #ffffff;
-    border: none;
+.nav-link-pixel:hover {
+    color: var(--pixel-magenta) !important;
+}
+
+.nav-link-pixel.active {
+    color: var(--pixel-magenta) !important;
+    font-weight: bold;
+}
+
+/* Buscador en el Navbar */
+.search-form-pixel {
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-control:focus {
+    border-color: var(--pixel-magenta);
+    box-shadow: 0 0 0 0.25rem rgba(178, 79, 205, 0.25);
+}
+
+/* Ícono del carrito y botón hamburguesa */
+.btn-nav-icon,
+.navbar-toggler-pixel {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.cart-icon-img {
+    width: 30px;
+    filter: invert(1);
+}
+
+
+/* ==========================================================================
+   3. BOTONES Y ACCIONES
+   ========================================================================== */
+
+/* Botón Morado (Estado Inicial) */
+.btn-pixel-purple {
+    background-color: var(--pixel-purple) !important;
+    color: #ffffff !important;
+    border: none !important;
     border-radius: 8px;
-    transition: background-color 0.3s ease;
+    box-shadow: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-pixel-purple:hover {
+    background-color: var(--pixel-magenta) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(178, 79, 205, 0.4) !important;
+}
+
+/* Botón Magenta (Relleno / En el Carrito) */
+.btn-pixel {
+    background-color: var(--pixel-magenta) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px;
+    box-shadow: none !important;
+    transition: all 0.3s ease !important;
 }
 
 .btn-pixel:hover {
-    background-color: var(--pixel-magenta-hover);
-    color: #ffffff;
+    background-color: var(--pixel-magenta-hover) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(178, 79, 205, 0.5) !important;
 }
 
-/* Botón Delineado (Para "Ver todo", "Ver más", etc.) */
+/* Botón Delineado */
 .btn-outline-pixel {
     color: var(--pixel-magenta);
     border: 2px solid var(--pixel-magenta);
@@ -49,7 +128,7 @@ nav.navbar {
     transform: translateY(-2px);
 }
 
-/* Botones de Categorías Grandes */
+/* Botones Grandes de Categoría */
 .btn-categoria {
     display: block;
     width: 100%;
@@ -63,7 +142,7 @@ nav.navbar {
 }
 
 .btn-categoria:hover {
-    background-color: var(--pixel-magenta) !important;
+    background-color: var(--pixel-magenta-hover) !important;
     color: #ffffff !important;
     transform: translateY(-2px);
 }
@@ -74,15 +153,77 @@ nav.navbar {
     box-shadow: 0 0 12px var(--pixel-magenta);
 }
 
-/* --- COMPONENTES --- */
 
-.text-pixel-magenta {
-    color: var(--pixel-magenta) !important;
+/* ==========================================================================
+   4. INICIO Y CARRUSEL
+   ========================================================================== */
+
+.carousel-item {
+    background-image: url('/img/fondo-header.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
-.card-img-top {
-    height: 220px;
-    object-fit: cover;
+.carousel-item img {
+    height: 400px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.carousel-caption-pixel {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+
+/* ==========================================================================
+   5. CATÁLOGO, FILTRO Y TARJETAS DE PRODUCTO
+   ========================================================================== */
+
+/* Barra de Filtrado */
+.filter-bar-pixel {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    font-size: 1.05rem;
+}
+
+.filter-label-pixel {
+    font-weight: bold;
+    color: #212529;
+    margin-right: 0.5rem;
+}
+
+.filter-item-pixel {
+    background: transparent !important;
+    border: none !important;
+    color: #555555;
+    font-weight: 500;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.filter-item-pixel:hover {
+    color: var(--pixel-magenta) !important;
+    transform: translateY(-1px);
+}
+
+.filter-item-pixel.active {
+    color: var(--pixel-magenta) !important;
+    font-weight: bold;
+    border-bottom: 2px solid var(--pixel-magenta) !important;
+}
+
+.filter-separator-pixel {
+    color: #cccccc;
+    user-select: none;
+    font-weight: 300;
 }
 
 /* Tarjetas de Producto */
@@ -94,59 +235,52 @@ nav.navbar {
 .card-pixel:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(178, 79, 205, 0.2) !important;
-    border-color: var(--pixel-magenta);
+    border-color: var(--pixel-magenta-hover);
 }
 
-/* Color del distintivo de oferta personalizado */
-.badge.bg-danger {
-  background-color: #e63946 !important;
-  font-weight: bold;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
 }
 
-/* Foco personalizado en el campo de búsqueda */
-.form-control:focus {
-    border-color: var(--pixel-magenta);
-    box-shadow: 0 0 0 0.25rem rgba(178, 79, 205, 0.25);
+/* Insignia de Oferta */
+.badge-oferta-pixel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.5rem;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+    background-color: #e63946 !important;
+    color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(230, 57, 70, 0.4);
+    z-index: 1;
 }
 
-/* Carrusel */
-.carousel-item img {
-    height: 350px; 
-    object-fit: contain; 
-    object-position: center;
+
+/* ==========================================================================
+   6. MODAL DEL CARRITO DE COMPRAS
+   ========================================================================== */
+
+#modalCarrito {
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
 }
 
-.carousel-item {
-    background-image: url('/img/fondo-header.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-/* Fondo para los textos del carrusel */
-.carousel-caption-pixel {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 8px;
-    padding: 1rem;
-}
-
-/* --- MODAL CARRITO DE COMPRAS --- */
-
-/* Fondo blanco general para el contenedor del modal */
 #modalCarrito .modal-content {
     background-color: #ffffff;
     color: #212529;
-    border: 2px solid var(--pixel-magenta);
+    border: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Líneas separadoras claras */
 #modalCarrito .modal-header,
 #modalCarrito .modal-footer {
     border-color: #dee2e6;
 }
 
-/* Ítems del carrito con fondo claro */
 #lista-carrito .list-group-item {
     background-color: #f8f9fa;
     color: #212529;
@@ -158,17 +292,46 @@ nav.navbar {
     margin-bottom: 0.5rem;
 }
 
-/* Botón de eliminación por producto */
 .btn-eliminar-item {
-    background: transparent;
+    background: #e63946 !important;
+    color: #ffffff !important;
     border: none;
-    color: #dc3545;
-    font-weight: bold;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: color 0.2s ease;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
 
 .btn-eliminar-item:hover {
-    color: #a71d2a;
+    background: #a71d2a !important;
+}
+
+
+/* ==========================================================================
+   7. NOTIFICACIONES (TOAST)
+   ========================================================================== */
+
+.toast-pixel {
+    background-color: var(--pixel-magenta) !important;
+    color: #ffffff !important;
+    border: 2px solid var(--pixel-magenta) !important;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(178, 79, 205, 0.35) !important;
+}
+
+
+/* ==========================================================================
+   8. PÁGINA DE CONTACTO Y ALERTAS
+   ========================================================================== */
+
+.card-contacto-pixel {
+    border: 1px solid var(--pixel-magenta) !important;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(178, 79, 205, 0.15) !important;
+    background-color: #ffffff;
+}
+
+.alert-pixel-success {
+    background-color: var(--pixel-purple) !important;
+    color: #ffffff !important;
+    border: 2px solid var(--pixel-magenta) !important;
+    border-radius: 8px;
 }

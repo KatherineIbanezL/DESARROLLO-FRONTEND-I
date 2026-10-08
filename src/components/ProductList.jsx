@@ -1,4 +1,3 @@
-import React from 'react';
 import { ProductCard } from './ProductCard';
 
 export function ProductList({ products, cart, addToCart }) {

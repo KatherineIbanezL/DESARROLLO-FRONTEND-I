@@ -1,13 +1,11 @@
-import React from 'react';
 import { ProductCard } from './ProductCard';
-import productosData from '../data/productos.json';
 
-export function Home({ cart = [], addToCart, onNavigate }) {
-  const videojuegosDestacados = productosData.filter(
+export function Home({ products = [], cart = [], addToCart, onNavigate }) {
+  const videojuegosDestacados = products.filter(
     (p) => p.categoria === 'Videojuegos' && p.destacado
   );
 
-  const coleccionablesDestacados = productosData.filter(
+  const coleccionablesDestacados = products.filter(
     (p) => p.categoria === 'TCG' && p.destacado
   );
 
@@ -72,7 +70,7 @@ export function Home({ cart = [], addToCart, onNavigate }) {
       <main className="container my-5">
         {/* SECCIÓN DE CATEGORÍAS PRINCIPALES */}
         <section id="categorias" className="mb-5">
-          <h2 className="text-center mb-4 fw-bold">Categorías Principales</h2>
+          <h2 className="text-center mb-4 fw-bold text-pixel-purple">Categorías Principales</h2>
           <div className="row g-3 justify-content-center">
             <div className="col-6 col-md-3">
               <button onClick={() => onNavigate('productos', 'TCG')} className="btn btn-categoria">TCG</button>
@@ -89,7 +87,7 @@ export function Home({ cart = [], addToCart, onNavigate }) {
         {/* VIDEOJUEGOS DESTACADOS */}
         <section className="mb-5">
           <div className="d-flex justify-content-between align-items-center mb-4">
-            <h2 className="fw-bold m-0">Videojuegos Destacados</h2>
+            <h2 className="fw-bold text-pixel-purple m-0">Videojuegos Destacados</h2>
             <button onClick={() => onNavigate('productos')} className="btn btn-outline-pixel">
               Ver Todo el Catálogo &rarr;
             </button>
@@ -104,7 +102,7 @@ export function Home({ cart = [], addToCart, onNavigate }) {
         {/* COLECCIONABLES DESTACADOS */}
         <section className="mb-5">
           <div className="d-flex justify-content-between align-items-center mb-4">
-            <h2 className="fw-bold m-0">Coleccionables Destacados</h2>
+            <h2 className="fw-bold text-pixel-purple m-0">Coleccionables Destacados</h2>
             <button onClick={() => onNavigate('productos', 'TCG')} className="btn btn-outline-pixel">
               Ver Más Coleccionables &rarr;
             </button>

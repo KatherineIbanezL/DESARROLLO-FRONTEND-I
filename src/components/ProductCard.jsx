@@ -1,11 +1,14 @@
-import React from 'react';
-
 export function ProductCard({ product, cart = [], addToCart }) {
   const tieneOferta = Boolean(product.precioOferta);
   const precioFinal = tieneOferta ? product.precioOferta : product.precio;
 
-  // Verifica si el producto ya está en el carrito
-  const isInCart = cart.some((item) => item.id === product.id);
+  // Extrae el ID del producto asegurando compatibilidad con distintas claves
+  const productId = product.id ?? product._id ?? product.codigo;
+
+  // Verifica si el producto ya está en el carrito (convirtiendo a String)
+  const isInCart = cart.some(
+    (item) => String(item.id ?? item._id ?? item.codigo) === String(productId)
+  );
 
   // Cálculo del porcentaje de descuento
   const porcentajeDescuento = tieneOferta
@@ -13,9 +16,10 @@ export function ProductCard({ product, cart = [], addToCart }) {
     : 0;
 
   const handleAddToCart = () => {
-    // Se envía el producto asegurando que el precio a cobrar sea el precio con oferta
+    // Envía el producto asegurando que el precio a cobrar sea el precio final (con oferta si aplica)
     addToCart({
       ...product,
+      id: productId,
       precio: precioFinal
     });
   };
@@ -25,11 +29,12 @@ export function ProductCard({ product, cart = [], addToCart }) {
       <div className="card h-100 shadow-sm card-pixel position-relative overflow-hidden">
         {/* Insignia de Oferta */}
         {tieneOferta && (
-          <span className="badge bg-danger position-absolute top-0 end-0 m-2 px-2 py-1 fs-6 z-1">
+          <span className="badge-oferta-pixel">
             -{porcentajeDescuento}% OFF
           </span>
         )}
 
+        {/* Imagen del producto con fallback y ruta base para GitHub Pages */}
         <img
           src={
             product.imagen 
@@ -41,7 +46,7 @@ export function ProductCard({ product, cart = [], addToCart }) {
         />
 
         <div className="card-body d-flex flex-column">
-          <h5 className="card-title fw-bold">
+          <h5 className="card-title fw-bold text-dark">
             {product.titulo || product.nombre || product.name}
           </h5>
           
@@ -66,10 +71,11 @@ export function ProductCard({ product, cart = [], addToCart }) {
             )}
           </div>
 
-          {/* Botón con renderizado condicional de estado y estilo */}
+          {/* Botón dinámico*/}
           <button
-            className={`btn w-100 mt-auto py-2 ${
-              isInCart ? 'btn-success' : 'btn-pixel'
+            type="button"
+            className={`btn w-100 fw-bold ${
+              isInCart ? 'btn-pixel' : 'btn-pixel-purple'
             }`}
             onClick={handleAddToCart}
           >
